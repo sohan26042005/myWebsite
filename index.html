@@ -3,23 +3,16 @@
 <head>
     <title>Name Index</title>
     <style>
-        #search-form {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#search-input {
-    padding: 5px;
-    width: 200px;
-}
-
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
+            background-color: #1a1a1a;
+            color: #ffffff;
         }
         h1 {
             text-align: center;
+            color: #66ccff;
         }
         ul {
             list-style-type: none;
@@ -28,18 +21,26 @@
         li {
             margin: 10px 0;
             padding: 5px;
-            border: 1px solid #ddd;
-            background-color: #f9f9f9;
+            border: 1px solid #333;
+            background-color: #333;
+            color: #ffffff;
+        }
+        #search-form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #search-input {
+            padding: 5px;
+            width: 200px;
         }
     </style>
 </head>
 <body>
     <h1>Name Index</h1>
     <form id="search-form">
-    <label for="search-input">Search:</label>
-    <input type="text" id="search-input" placeholder="Enter a name">
-</form>
-
+        <label for="search-input">Search:</label>
+        <input type="text" id="search-input" placeholder="Enter a name">
+    </form>
     <ul>
         <li>John Doe</li>
         <li>Jane Smith</li>
@@ -47,22 +48,21 @@
         <!-- Add more names here -->
     </ul>
     <script>
-    const searchInput = document.getElementById("search-input");
-    const nameList = document.querySelectorAll("li");
+        const searchInput = document.getElementById("search-input");
+        const nameList = document.querySelectorAll("li");
 
-    searchInput.addEventListener("input", function () {
-        const searchTerm = searchInput.value.toLowerCase();
+        searchInput.addEventListener("input", function () {
+            const searchTerm = searchInput.value.toLowerCase();
 
-        nameList.forEach(function (name) {
-            const nameText = name.textContent.toLowerCase();
-            if (nameText.includes(searchTerm)) {
-                name.style.display = "block";
-            } else {
-                name.style.display = "none";
-            }
+            nameList.forEach(function (name) {
+                const nameText = name.textContent.toLowerCase();
+                if (nameText.includes(searchTerm)) {
+                    name.style.display = "block";
+                } else {
+                    name.style.display = "none";
+                }
+            });
         });
-    });
-</script>
-
+    </script>
 </body>
 </html>
