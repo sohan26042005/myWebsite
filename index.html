@@ -3,6 +3,16 @@
 <head>
     <title>Name Index</title>
     <style>
+        #search-form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    padding: 5px;
+    width: 200px;
+}
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -25,11 +35,34 @@
 </head>
 <body>
     <h1>Name Index</h1>
+    <form id="search-form">
+    <label for="search-input">Search:</label>
+    <input type="text" id="search-input" placeholder="Enter a name">
+</form>
+
     <ul>
         <li>John Doe</li>
         <li>Jane Smith</li>
         <li>Michael Johnson</li>
         <!-- Add more names here -->
     </ul>
+    <script>
+    const searchInput = document.getElementById("search-input");
+    const nameList = document.querySelectorAll("li");
+
+    searchInput.addEventListener("input", function () {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        nameList.forEach(function (name) {
+            const nameText = name.textContent.toLowerCase();
+            if (nameText.includes(searchTerm)) {
+                name.style.display = "block";
+            } else {
+                name.style.display = "none";
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
