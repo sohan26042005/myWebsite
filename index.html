@@ -1,95 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Name Index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index of Names</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
         }
-        h1 {
+
+        header {
+            background-color: #333;
+            color: #fff;
             text-align: center;
-            margin-bottom: 20px;
+            padding: 10px;
         }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         li {
-            margin: 10px 0;
-            padding: 5px;
-            border: 1px solid #ddd;
-            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
+        .download-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-button:hover {
+            background-color: #555;
+        }
+        
         #search-form {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        #search-input {
-            padding: 5px;
-            width: 200px;
-        }
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    padding: 5px;
+    width: 200px;
+}
+
     </style>
+
+<script type="text/javascript">
+    var app_url = 'https://moneykamalo.com/';
+    var app_api_token = 'b3308461afd25043bec529e2beb35d8e98357ea2';
+    var app_advert = 2;
+    var app_domains = ["t.me"];
+</script>
+<script src='//moneykamalo.com/js/full-page-script.js'></script>
 </head>
 <body>
-    <h1>Name Index</h1>
-    <form id="search-form">
-        <label for="search-input">Search:</label>
-        <input type="text" id="search-input" placeholder="Enter a name">
-    </form>
-    <ul>
-        <li>John Doe</li>
-        <li> <a href="https://www.w3schools.com/">Visit W3Schools.com!</a></li>
-        <li>Jane Smith</li>
-        <li>Michael Johnson</li>
-        <!-- Add more names here -->
-    </ul>
-    <button id="theme-toggle">Toggle Theme</button>
+    <header>
+        <h1>Index of Names</h1>
+        <form id="search-form">
+    <label for="search-input">Search:</label>
+    <input type="text" id="search-input" placeholder="Enter a name">
+</form>
+
+    </header>
+    <div class="container">
+        <ul>
+            <li>
+                <span>Dream Girl 2 (2023) Bollywood Hindi Full Movie HQ S-Print</span>
+                <a href="https://t.me/FileStorageMM_bot?start=BQADAQADOAoAAprQSUe8Z1Z4gPIEdBYE
+                " class="download-button"><i class="fas fa-download"></i> Download</a>
+            </li>
+            <li>
+                <span>Jane Smith</span>
+                <a href="#" class="download-button"><i class="fas fa-download"></i> Download</a>
+            </li>
+            <li>
+                <span>Michael Johnson</span>
+                <a href="#" class="download-button"><i class="fas fa-download"></i> Download</a>
+            </li>
+
+
+
+            <!-- Add more names here -->
+        </ul>
+    </div>
     <script>
-        const searchInput = document.getElementById("search-input");
-        const nameList = document.querySelectorAll("li");
-        const themeToggle = document.getElementById("theme-toggle");
-        let darkTheme = false;
+    const searchInput = document.getElementById("search-input");
+    const nameList = document.querySelectorAll("li");
 
-        themeToggle.addEventListener("click", function () {
-            darkTheme = !darkTheme;
-            applyTheme();
-        });
+    searchInput.addEventListener("input", function () {
+        const searchTerm = searchInput.value.toLowerCase();
 
-        function applyTheme() {
-            if (darkTheme) {
-                document.body.style.backgroundColor = "#1a1a1a";
-                document.body.style.color = "#ffffff";
-                nameList.forEach(name => {
-                    name.style.backgroundColor = "#333";
-                    name.style.color = "#ffffff";
-                });
+        nameList.forEach(function (name) {
+            const nameText = name.textContent.toLowerCase();
+            if (nameText.includes(searchTerm)) {
+                name.style.display = "block";
             } else {
-                document.body.style.backgroundColor = "#ffffff";
-                document.body.style.color = "#000000";
-                nameList.forEach(name => {
-                    name.style.backgroundColor = "#f9f9f9";
-                    name.style.color = "#000000";
-                });
+                name.style.display = "none";
             }
-        }
-
-        searchInput.addEventListener("input", function () {
-            const searchTerm = searchInput.value.toLowerCase();
-
-            nameList.forEach(function (name) {
-                const nameText = name.textContent.toLowerCase();
-                if (nameText.includes(searchTerm)) {
-                    name.style.display = "block";
-                } else {
-                    name.style.display = "none";
-                }
-            });
         });
+    });
+</script>
 
-        // Apply the initial theme
-        applyTheme();
-    </script>
 </body>
 </html>
