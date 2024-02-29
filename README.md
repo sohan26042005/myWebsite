@@ -1,2 +1,2 @@
-# myWebsite
+# Study Hours Counter
 First Website
