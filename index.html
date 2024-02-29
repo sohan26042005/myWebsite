@@ -3,437 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No. 1 Movie Site</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Study Hours Counter</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            text-align: center;
+            margin: 50px;
             background-color: #f4f4f4;
+        }
+        h1 {
             color: #333;
         }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
-
         .container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
-        ul {
+        .input-container {
+            margin-bottom: 20px;
+        }
+        .input-container input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+            font-size: 16px;
+        }
+        .input-container button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #study-hours {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #timer {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        #timer button {
+            margin: 0 10px;
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #time {
+            font-size: 24px;
+        }
+        #daily-data {
+            margin-top: 20px;
+            text-align: left;
+        }
+        #dailyList {
             list-style-type: none;
             padding: 0;
         }
-
-        li {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        #dailyList li {
+            margin-bottom: 5px;
         }
-
-        .download-button {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .download-button:hover {
-            background-color: #555;
-        }
-        
-        #search-form {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#search-input {
-    padding: 5px;
-    width: 200px;
-}
-
     </style>
-
-<script type="text/javascript">
-    var app_url = 'https://earn2me.com/';
-    var app_api_token = 'f7b7f31dae347677205fdf31db2db3fbfb3e876c';
-    var app_advert = 2;
-    var app_domains = ["telegram.me"];
-</script>
-<script src='//earn2me.com/js/full-page-script.js'></script>
-
 </head>
 <body>
-    <header>
-        <h1>Movie Monastery</h1>
-        <form id="search-form">
-    <label for="search-input">Search:</label>
-    <input type="text" id="search-input" placeholder="Enter movie name">
-</form>
-
-    </header>
     <div class="container">
-        <ul>
-
-
-
-
-
-
-<li>
-                <span>Kushi 2023 South Hindi S-Print</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADTQwAAjZMkEe90WtYnyQBiBYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Biye Bibhrat 2023 Bengali ZEE5 HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADTwwAAjZMkEfWY0JINg8fkBYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Ex Jokhon Nurse 2023 Bengali</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADRgwAAjZMkEcaH7JCLzUaIRYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-
-<li>
-                <span>Subhedar 2023 Marathi PreDVD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADTAwAAjZMkEf8Jhn1-ZMNqRYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Bhootni De 2023 Panjabi HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADSQwAAjZMkEcFEeDZe7vQDRYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Antique Part 1 S01 Hindi</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADRwwAAjZMkEd5Vnv_e3_hUxYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Love All 2023 Bollywood Hindi S-Print</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADSAwAAjZMkEcTIWw24zL-dBYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Friday Night Plan 2023 Hindi HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADSwwAAjZMkEfMHpJMKEaOSBYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>The Wheel of Time S02 2023 Hindi/English</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADQwwAAjZMkEf1XQgObjbHWxYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>The Freelancer S1 2023 Hindi</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADQAwAAjZMkEfn-yClTyDEEBYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Scam 2003 S1 (Part-01) 2023 Hindi </span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADPQwAAjZMkEdalrZhxujhaBYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-
-<li>
-                <span>Bajao 2023 Hindi S01 Completed</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADOAwAAjZMkEerEBfCQN1hcxYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Kumudini Bhavan S01 Bengali HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADcQYAAlc2gUechiv4BES_NhYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Rudrangi 2023 HD (not Hindi)</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADbAYAAlc2gUdOtIIurwLKtBYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Kothamrito 2022 Bengali</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADeAYAAlc2gUd0t6I5skm7CBYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Brahmastra Part One - Shiva 2022 Hindi HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADegYAAlc2gUfjkZYaKqt6SRYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Made In Bangladesh 2019 Bengali</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADoAYAAlc2gUcwdRLmrp78yhYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Veer Zaara 2004 Hindi HD SRK</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADqwYAAlc2gUemjGdujUrzlxYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Autograph 2010 Bengali HD </span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADHwUAAlc2iUfkti6OHkB6PBYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Boss 1 & 2 Bengali HD</span>
-                <a href="https://t.me/FileStorageMM_bot?start=BQADAQADIAUAAlc2iUfxulvIkEYjrBYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Gravity 2013 Hindi HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQAD9wQAAlc2iUc-XGn-g5IyExYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Apollo 13 1995 Hindi/English</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQAD-AQAAlc2iUfHtFMKrn2FfRYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>The Martian 2015 Hindi HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADKQUAAlc2iUcw8rE2-qjwLhYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Meg 2 The Trench 2023 Hindi/English HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADDQUAAp2QgEe6errRAAGmd1QWBA"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Jailer 2023 South Hindi (Clear) HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQAD4gkAAp2QeEdQAAELG68iVp8WBA"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Gandeevadhari Arjuna 2023 Hindi(Studio DUB) S-Print</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADBwoAAp2QeEdtM-Au3w4dsRYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Ahsoka 2023 MCU Hindi/English S01E03</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADZgUAAp2QgEd531w1iIX0YxYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Breaking Bad S01E02 2008 Hindi/English</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADTwUAAp2QgEdnjKush02y7xYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-
-
-                <span>Interstellar 2014 Hindi HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADZQUAAp2QgEdKzXtEVcKwYxYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Drishyam 2 2022 Bollywood Hindi HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADYwUAAp2QgEc0cvvdv4505hYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-
-
-<li>
-                <span>Oh! Lovely 2023 Bengali HDTS</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADkwUAAp2QcEefUoPvyG1UjRYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-
-
-
-<li>
-                <span>King of Kotha 2023 HQ S-Print Hindi</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADwgQAAp2QcEev594WgRWcDRYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Dream Girl 2019 HD Hindi</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADyQQAAp2QcEdRqI91PhsAAbgWBA"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-
-<li>
-                <span>Breaking Bad S01E01 2008 Hindi_Eng</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADUAMAAjRvcEcMohllNiTH7RYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-
-
-<li>
-                <span>Bonyo premer golpo Bengali S01-02 HD</span>
-                <a href=" https://telegram.me/FileStorageMM_bot?start=BQADAQADjwcAAsbgYUfsdprSxz5VZhYE "  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>OMG 2 2023 Hindi HQ S-Print</span>
-                <a href=" https://telegram.me/FileStorageMM_bot?start=BQADAQADzAkAAik0uEYl6DOMr1h9UBYE "  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Shubh Mangal Zyada Saavdhan 2020 Hindi</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQAD5AYAAsbgaUehpLKeEl6BFxYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Happy New Year 2014 Hindi HD  </span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQAD6gYAAsbgaUeYuq6fssPPTBYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Jailer 2023 Hindi HQ S-Print</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQAD7wYAAsbgaUePz8ujIXGE_hYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>RRR 2022 HD Hindi/Telugu</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQAD9wYAAsbgaUdIRPm0Dcv_exYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-
-
-        <li>
-                <span>Poikkal Kuthirai 2023 South Hindi/Tamil HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADkgYAAsbgYUcdh_2HQmx5uhYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>O Saathiya 2023 South Hindi HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADkwYAAsbgYUcOnTWuIXqS9xYE "  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Byomkesh O Durgo Rohosyo 2023 HDTS Bengali</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADfQYAAsbgYUeKXsVQcBck0BYE "  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Cheeni 2 2023 HDTS Bengali</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADgAYAAsbgYUfNilKlkBxtThYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Bloody Daddy 2023 Bollywood Hindi HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADhwYAAsbgYUdx4F-RfXU_jxYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Byomkesh All Webseries S01-08</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADkAYAAsbgYUdd9P_Mua0OLRYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span> Byomkesh All Movies</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADkQYAAsbgYUcuD2tQ6oG-UxYE "  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>    
-
-<li>
-                <span>Surongo 2023 Bangla HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADpQcAAlKYWUdRw-iaAjfY2xYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Shohorer Ushnotomo Din E 2023 Bengali HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADnQcAAlKYWUfgI0Iw67Sc2BYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Guns & Gulaabs 2023 Hindi Season 01</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADrgcAAlKYWUeVUoCFsA3iPhYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Abar Proloy 2023 Bengali S01 HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADNAYAAudVsEb_2QnU4QigWRYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Nikhoj 2023 Bengali S01 HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADOAYAAudVsEZLmv-TRdWExRYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Sharey Showlo 2023 Bengali S01 HD</span>
-                <a href="https://telegram.me/ADULTmm_bot?start=BQADAQADYwQAAkT1-UZQFvU449fechYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Daal Baati Churma 2023 Bengali HDTV</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADkAkAAobtCUe0oPMKloqAJBYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-
-<li>
-                <span>Sagardwipey Jawker Dhan 2019 Bengali HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADXgUAAosVEEff7N5pDDFGnBYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-<li>
-                <span>Priyotoma 2023 Bengali Bioscope HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADWwgAAoB5IUd_Rsg4d409vBYE"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-
-
-<li>
-                <span>Taali 2023 Hindi S01 HD</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADIgoAAhtN4UZU4m1INAABq-kWBA"  class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-
-            <li>
-                <span>Dream Girl 2 (2023) Bollywood Hindi Full Movie HQ S-Print</span>
-                <a href="https://telegram.me/FileStorageMM_bot?start=BQADAQADOAoAAprQSUe8Z1Z4gPIEdBYE
-                " class="download-button"><i class="fas fa-download"></i> Download</a>
-            </li>
-           
-
-
-            <!-- Add more names here -->
-        </ul>
+        <h1>Study Hours Counter</h1>
+        <div class="input-container">
+            <p>Enter the number of hours you've studied:</p>
+            <input type="number" id="studyInput" min="0" step="0.5">
+            <button onclick="addStudyHours()">Add Hours</button>
+        </div>
+        <div id="study-hours">Total Study Hours: <span id="totalHours">0</span></div>
+        <div id="timer">
+            <button onclick="startTimer()">Start Timer</button>
+            <button onclick="stopTimer()">Stop Timer</button>
+            <span id="time">00:00:00</span>
+        </div>
+        <div id="daily-data">
+            <h2>Daily Study Data:</h2>
+            <ul id="dailyList"></ul>
+        </div>
     </div>
+
     <script>
-    const searchInput = document.getElementById("search-input");
-    const nameList = document.querySelectorAll("li");
+        var timerInterval;
+        var startTime;
 
-    searchInput.addEventListener("input", function () {
-        const searchTerm = searchInput.value.toLowerCase();
-
-        nameList.forEach(function (name) {
-            const nameText = name.textContent.toLowerCase();
-            if (nameText.includes(searchTerm)) {
-                name.style.display = "block";
-            } else {
-                name.style.display = "none";
-            }
+        // Load daily data from localStorage
+        document.addEventListener("DOMContentLoaded", function() {
+            loadDailyData();
         });
-    });
-</script>
 
+        // Function to add study hours
+        function addStudyHours() {
+            var inputElement = document.getElementById("studyInput");
+            var hours = parseFloat(inputElement.value);
 
-<a href="https://www.hitwebcounter.com" target="_blank">
-<img src="https://hitwebcounter.com/counter/counter.php?page=8932426&style=0030&nbdigits=9&type=page&initCount=1000" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>                                    
-                                    
+            if (!isNaN(hours)) {
+                var totalElement = document.getElementById("totalHours");
+                var currentTotal = parseFloat(totalElement.textContent);
+                totalElement.textContent = currentTotal + hours;
+                inputElement.value = ""; // Clear input field after adding
 
-    
+                // Save the daily data
+                var date = new Date().toLocaleDateString();
+                var dailyData = JSON.parse(localStorage.getItem("dailyData")) || {};
+                if (!dailyData[date]) {
+                    dailyData[date] = 0;
+                }
+                dailyData[date] += hours;
+                localStorage.setItem("dailyData", JSON.stringify(dailyData));
+
+                // Update the daily data list
+                loadDailyData();
+            } else {
+                alert("Please enter a valid number of hours!");
+            }
+        }
+
+        // Function to load daily data from localStorage and display it
+        function loadDailyData() {
+            var dailyList = document.getElementById("dailyList");
+            dailyList.innerHTML = ""; // Clear previous list items
+            var dailyData = JSON.parse(localStorage.getItem("dailyData")) || {};
+            for (var date in dailyData) {
+                var listItem = document.createElement("li");
+                var totalHours = Math.floor(dailyData[date]);
+                var totalMinutes = Math.round((dailyData[date] - totalHours) * 60);
+                listItem.textContent = `${date}: ${totalHours} hours ${totalMinutes} minutes`;
+                dailyList.appendChild(listItem);
+            }
+        }
+
+        // Function to start the timer
+        function startTimer() {
+            startTime = Date.now();
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        // Function to stop the timer
+        function stopTimer() {
+            clearInterval(timerInterval);
+            var elapsedTime = (Date.now() - startTime) / 1000;
+            var hours = Math.floor(elapsedTime / 3600);
+            var minutes = Math.floor((elapsedTime % 3600) / 60);
+            var seconds = Math.floor(elapsedTime % 60);
+            var formattedTime = formatTime(hours) + ":" + formatTime(minutes) + ":" + formatTime(seconds);
+            var inputElement = document.getElementById("studyInput");
+            inputElement.value = parseFloat(inputElement.value || 0) + parseFloat((hours + minutes / 60).toFixed(2));
+            document.getElementById("time").textContent = formattedTime;
+        }
+
+        // Function to update the timer display
+        function updateTimer() {
+            var elapsedTime = (Date.now() - startTime) / 1000;
+            var hours = Math.floor(elapsedTime / 3600);
+            var minutes = Math.floor((elapsedTime % 3600) / 60);
+            var seconds = Math.floor(elapsedTime % 60);
+            var formattedTime = formatTime(hours) + ":" + formatTime(minutes) + ":" + formatTime(seconds);
+            document.getElementById("time").textContent = formattedTime;
+        }
+
+        // Function to format time values (add leading zeros)
+        function formatTime(time) {
+            return time < 10 ? "0" + time : time;
+        }
+    </script>
 </body>
 </html>
